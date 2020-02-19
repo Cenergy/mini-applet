@@ -10,10 +10,14 @@
     "list": [
       {
         "pagePath": "pages/index/index",
+        "iconPath": "images/icon1.png",
+        "selectedIconPath": "images/icon1s.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/logs/logs",
+        "iconPath": "images/icon2.png",
+        "selectedIconPath": "images/icon2s.png",
         "text": "日志"
       }
     ]

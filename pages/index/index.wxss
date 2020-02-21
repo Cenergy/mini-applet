@@ -10,6 +10,10 @@
 .container .item{
   height: 100rpx;
   width: 100rpx;
+  
   background:green;
   border:1px solid #ccc;
+}
+.i3{
+    flex:1 1 350rpx;
 }

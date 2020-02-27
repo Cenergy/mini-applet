@@ -1,0 +1,39 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "爱即是诗"
+			}
+		},{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "爱即是诗"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "爱即是诗",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh":true
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#3cc51f",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/index/index",
+	        "iconPath": "static/images/icon1.png",
+	        "selectedIconPath": "static/images/icon1s.png",
+	        "text": "组件"
+	    }, {
+	        "pagePath": "pages/message/message",
+	        "iconPath": "static/images/icon2.png",
+	        "selectedIconPath": "static/images/icon2s.png",
+	        "text": "接口"
+	    }]
+	}
+}

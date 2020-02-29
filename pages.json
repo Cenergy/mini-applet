@@ -15,13 +15,14 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "爱即是诗",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
-		"enablePullDownRefresh":true
+		"navigationBarBackgroundColor": "#ffd300",
+		"backgroundColor": "#ffd30",
+		"enablePullDownRefresh": true,
+		"onReachBottomDistance":50
 	},
 	"tabBar": {
-	    "color": "#7A7E83",
-	    "selectedColor": "#3cc51f",
+	    "color": "#333333",
+	    "selectedColor": "#F76E15",
 	    "borderStyle": "black",
 	    "backgroundColor": "#ffffff",
 	    "list": [{

@@ -1,20 +1,23 @@
 <template>
 	<view class="">
 		<Search></Search>
-		<GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList>
+		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
+		<SearchU></SearchU>
 	</view>
 </template>
 
 <script>
 import Search from '../../components/search/Search.vue';
 import GoodsList from '../../components/goodsList/GoodsList.vue';
+import SearchU from '../../components/searchU/SearchU.vue';
 import {baseURL} from '../../common/constants.js';
 
 
 export default {
 	components: {
 		Search,
-		GoodsList
+		GoodsList,
+		SearchU
 	},
 	data() {
 		return {

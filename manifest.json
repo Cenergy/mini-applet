@@ -1,5 +1,5 @@
 {
-    "name" : "un-test",
+    "name" : "min-applet",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -57,7 +57,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx5e81f80b5c18df38",
         "setting" : {
             "urlCheck" : false
         },

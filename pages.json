@@ -29,12 +29,12 @@
 	        "pagePath": "pages/index/index",
 	        "iconPath": "static/images/icon1.png",
 	        "selectedIconPath": "static/images/icon1s.png",
-	        "text": "组件"
+	        "text": "首页"
 	    }, {
 	        "pagePath": "pages/message/message",
 	        "iconPath": "static/images/icon2.png",
 	        "selectedIconPath": "static/images/icon2s.png",
-	        "text": "接口"
+	        "text": "个人中心"
 	    }]
 	}
 }

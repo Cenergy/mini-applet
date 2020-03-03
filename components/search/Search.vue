@@ -5,7 +5,7 @@
 		</view>
 		<view class="search">
 			<image src="../../static/images/search.svg" mode="widthFix" class="search-img"></image>
-			<input type="text" placeholder="请输入要搜索的内容" disabled=""/>
+			<input type="text" placeholder="请输入要搜索的内容" disabled="" @click="searchRedict"/>
 		</view>
 		<view class="search-code">
 			<image src="../../static/images/message.svg" mode="widthFix"></image>
@@ -16,7 +16,12 @@
 <script>
 	
 	export default {
-		name:"search"
+		name:"search",
+		methods:{
+			searchRedict(){
+				this.$emit('searchRedict')
+			}
+		}
 	}
 </script>
 

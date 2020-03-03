@@ -1,15 +1,15 @@
 <template>
 	<view class="">
-		<Search></Search>
+		<Search @searchRedict='searchRedict'></Search>
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
-		<SearchU></SearchU>
+		<GoodsList  :loadingText="loadingText" ></GoodsList>
 	</view>
 </template>
 
 <script>
 import Search from '../../components/search/Search.vue';
 import GoodsList from '../../components/goodsList/GoodsList.vue';
-import SearchU from '../../components/searchU/SearchU.vue';
+
 import {baseURL} from '../../common/constants.js';
 
 
@@ -17,7 +17,7 @@ export default {
 	components: {
 		Search,
 		GoodsList,
-		SearchU
+
 	},
 	data() {
 		return {
@@ -76,6 +76,23 @@ export default {
 					console.log(res.data);
 				}
 			});
+		},
+		searchRedict(){
+			uni.navigateTo({
+				url:'/pages/search/search',
+				fail() {
+					uni.showToast({
+						title:'no',
+						icon:"none"
+					})
+				},
+				success() {
+					uni.showToast({
+						title:'yes',
+						icon:"none"
+					})
+				}
+			})
 		}
 	}
 };

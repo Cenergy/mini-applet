@@ -10,6 +10,11 @@
 			"style": {
 				"navigationBarTitleText": "爱即是诗"
 			}
+		},{
+			"path": "pages/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
 		}
 	],
 	"globalStyle": {

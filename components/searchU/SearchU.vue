@@ -49,7 +49,7 @@
 			hotList: { //推荐列表数据
 				type: Array,
 				default () {
-					return []
+					return  ['栏目1','栏目2','栏目3','栏目4']
 				}
 			},
 			speechEngine: { //语音引擎=>讯飞:iFly,百度:'baidu'

@@ -1,21 +1,21 @@
 <template>
 	<view>
-		<zy-search :is-focus="false" :theme="themeClass" :show-want="true" :speechEngine="speechEngine"
-		:hot-list="hotList" @getSearchText="getSearchText"></zy-search>
+		<SearchU :is-focus="true" :theme="themeClass" :show-want="true" :speechEngine="speechEngine"
+		:hot-list="hotList" @getSearchText="getSearchText"></SearchU>
 	</view>
 </template>
 
 <script>
-	import zySearch from '../../components/zy-search/zy-search.vue'
+	import SearchU from '../../components/searchU/SearchU.vue';
 	export default {
 		components: {
-			zySearch
+			SearchU
 		},
 		data() {
 			return {
-				themeClass: 'block',
+				themeClass: 'circle',
 				speechEngine: 'baidu', //语音识别引擎
-				hotList: ['栏目1','栏目2','栏目3','栏目4']	//初始化推荐列表
+				hotList: ['arcgis','gis','django','webgis']	//初始化推荐列表
 			}
 		},
 		methods: {

@@ -35,6 +35,12 @@ export default {
 						sourcename: '商品名称商品名称商品名称商品名称商品名称',
 						price: '￥168',
 						slogan: '1235人付款'
+					},{
+						goods_id: 0,
+						source_img: '/static/img/goods/p1.jpg',
+						sourcename: '商品名称商品名称商品名称商品名称商品名称',
+						price: '￥168',
+						slogan: '1235人付款'
 					},
 					{
 						goods_id: 1,

@@ -1,6 +1,8 @@
 <template>
 	<view class="">
-		<Search @searchRedict='searchRedict'></Search>
+		<!-- <Search @searchRedict='searchRedict'></Search> -->
+		<!-- <uni-nav-bar left-icon="back" left-text="返回" right-text="菜单" title="导航栏组件"></uni-nav-bar> -->
+		<navigationCustom></navigationCustom>
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
 		<GoodsList  :loadingText="loadingText" ></GoodsList>
 	</view>
@@ -11,14 +13,21 @@ import Search from '../../components/search/Search.vue';
 import GoodsList from '../../components/goodsList/GoodsList.vue';
 
 import {baseURL} from '../../common/constants.js';
+import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
+ import navigationCustom from "../../components/struggler-navigationCustom/navigation-custom"
 
 
 export default {
 	components: {
 		Search,
 		GoodsList,
+		navigationCustom
+		
 
 	},
+	 onPageScroll(e) {
+	            this.scrollTop = e.scrollTop;
+	        },
 	data() {
 		return {
 			currentPage:1,
@@ -27,7 +36,19 @@ export default {
 			loadingText:'',
 			baseURL,
 			dataList: [
-			]
+			],
+		config:{
+		                    title:"我是标题", 
+		                    bgcolor:"#c1a379", 
+		                    type:2, 
+		                    transparent:true,
+		                    linear:true, 
+		                    share:true, 
+	
+		                },
+		                scrollTop:0 ,
+		                scrollMaxHeight:200 
+			
 		};
 	},
 	onLoad() {
@@ -77,6 +98,9 @@ export default {
 				}
 			});
 		},
+		customConduct(){
+		                console.log("ssssss")
+		            },
 		searchRedict(){
 			uni.navigateTo({
 				url:'/pages/search/search',

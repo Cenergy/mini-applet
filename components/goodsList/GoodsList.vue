@@ -2,7 +2,7 @@
 	<view class="goods-list">
 		<view class="product-list">
 			<view class="product" v-for="product in goodsList" :key="product.goods_id" @tap="toGoods(product)">
-				<image mode="scaleToFill" :src="baseURL+product.source_img"></image>
+				<image mode="scaleToFill" :src="baseURL + product.source_img"></image>
 				<view class="name">{{ product.sourcename }}</view>
 				<view class="info">
 					<view class="price">{{ product.price }}</view>
@@ -16,18 +16,18 @@
 
 <script>
 export default {
-	props:{
+	props: {
 		loadingText: {
-			type:String,
-			default:'正在加载中...'
+			type: String,
+			default: '正在加载中...'
 		},
-		baseURL:{
-			type:String,
-			default:''
+		baseURL: {
+			type: String,
+			default: ''
 		},
-		goodsList:{
-			type:Array,
-			default(){
+		goodsList: {
+			type: Array,
+			default() {
 				return [
 					{
 						goods_id: 0,
@@ -41,6 +41,32 @@ export default {
 						sourcename: '商品名称商品名称商品名称商品名称商品名称',
 						price: '￥168',
 						slogan: '1235人付款'
+					},{
+						goods_id: 0,
+						source_img: '/static/img/goods/p1.jpg',
+						sourcename: '商品名称商品名称商品名称商品名称商品名称',
+						price: '￥168',
+						slogan: '1235人付款'
+					},{
+						goods_id: 0,
+						source_img: '/static/img/goods/p1.jpg',
+						sourcename: '商品名称商品名称商品名称商品名称商品名称',
+						price: '￥168',
+						slogan: '1235人付款'
+					},
+					{
+						goods_id: 0,
+						source_img: '/static/img/goods/p1.jpg',
+						sourcename: '商品名称商品名称商品名称商品名称商品名称',
+						price: '￥168',
+						slogan: '1235人付款'
+					},
+					{
+						goods_id: 0,
+						source_img: '/static/img/goods/p1.jpg',
+						sourcename: '商品名称商品名称商品名称商品名称商品名称',
+						price: '￥168',
+						slogan: '1235人付款'
 					},
 					{
 						goods_id: 1,
@@ -49,7 +75,7 @@ export default {
 						price: '￥168',
 						slogan: '1235人付款'
 					}
-				]
+				];
 			}
 		}
 	},

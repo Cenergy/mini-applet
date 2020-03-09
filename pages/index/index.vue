@@ -4,7 +4,7 @@
 		<!-- <uni-nav-bar left-icon="back" left-text="返回" right-text="菜单" title="导航栏组件"></uni-nav-bar> -->
 		<navigationCustom></navigationCustom>
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
-		<GoodsList  :loadingText="loadingText" ></GoodsList>
+		<GoodsList :loadingText="loadingText"></GoodsList>
 	</view>
 </template>
 
@@ -12,77 +12,71 @@
 import Search from '../../components/search/Search.vue';
 import GoodsList from '../../components/goodsList/GoodsList.vue';
 
-import {baseURL} from '../../common/constants.js';
-import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
- import navigationCustom from "../../components/struggler-navigationCustom/navigation-custom"
-
+import { baseURL } from '../../common/constants.js';
+import uniNavBar from '@/components/uni-nav-bar/uni-nav-bar.vue';
+import navigationCustom from '../../components/struggler-navigationCustom/navigation-custom';
 
 export default {
 	components: {
 		Search,
 		GoodsList,
 		navigationCustom
-		
-
 	},
-	 onPageScroll(e) {
-	            this.scrollTop = e.scrollTop;
-	        },
+	onPageScroll(e) {
+		this.scrollTop = e.scrollTop;
+	},
 	data() {
 		return {
-			currentPage:1,
+			currentPage: 1,
 			title: 'Hello',
 			onKeyInput: '',
-			loadingText:'',
+			loadingText: '',
 			baseURL,
-			dataList: [
-			],
-		config:{
-		                    title:"我是标题", 
-		                    bgcolor:"#c1a379", 
-		                    type:2, 
-		                    transparent:true,
-		                    linear:true, 
-		                    share:true, 
-	
-		                },
-		                scrollTop:0 ,
-		                scrollMaxHeight:200 
-			
+			dataList: [],
+			config: {
+				title: '我是标题',
+				bgcolor: '#c1a379',
+				type: 2,
+				transparent: true,
+				linear: true,
+				share: true
+			},
+			scrollTop: 0,
+			scrollMaxHeight: 200
 		};
 	},
 	onLoad() {
 		uni.request({
 			url: `${baseURL}/api/v1/sources/`, //仅为示例，并非真实接口地址。
 			data: {
-				page:this.currentPage,
-				num:10,
+				page: this.currentPage,
+				num: 10
 			},
 			success: res => {
-				const {data}=res
-				this.dataList=data.data
-				this.currentPage+=1
+				const { data } = res;
+				this.dataList = data.data;
+				this.currentPage += 1;
 			}
 		});
 	},
-	onReachBottom() {		
+	onReachBottom() {
 		uni.request({
 			url: `${baseURL}/api/v1/sources/`, //仅为示例，并非真实接口地址。
 			data: {
-				page:this.currentPage,
-				num:10,
+				page: this.currentPage,
+				num: 10
 			},
 			success: res => {
-				const {data}=res
-				const lastPage=data.pages;
-				console.log(lastPage ,this.currentPage)
-				if(lastPage===this.currentPage){
+				const { data } = res;
+				const lastPage = data.pages;
+				console.log(lastPage, this.currentPage);
+				if (lastPage === this.currentPage) {
 					this.loadingText = '我是有底线的！！！';
 					return false;
 				}
 				uni.showToast({ title: '触发上拉加载' });
-				this.dataList.push(data.data)
-				this.currentPage+=1
+				this.dataList.push(data.data);
+				this.currentPage += 1;
 			}
 		});
 	},
@@ -98,25 +92,25 @@ export default {
 				}
 			});
 		},
-		customConduct(){
-		                console.log("ssssss")
-		            },
-		searchRedict(){
+		customConduct() {
+			console.log('ssssss');
+		},
+		searchRedict() {
 			uni.navigateTo({
-				url:'/pages/search/search',
+				url: '/pages/search/search',
 				fail() {
 					uni.showToast({
-						title:'no',
-						icon:"none"
-					})
+						title: 'no',
+						icon: 'none'
+					});
 				},
 				success() {
 					uni.showToast({
-						title:'yes',
-						icon:"none"
-					})
+						title: 'yes',
+						icon: 'none'
+					});
 				}
-			})
+			});
 		}
 	}
 };

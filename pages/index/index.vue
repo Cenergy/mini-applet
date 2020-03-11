@@ -1,7 +1,7 @@
 <template>
 	<view class="">
 		<!-- <Search @searchRedict='searchRedict'></Search> -->
-		<!-- <uni-nav-bar left-icon="back" left-text="返回" right-text="菜单" title="导航栏组件"></uni-nav-bar> -->
+		
 		<navigationCustom>
 			<template v-slot:left>
 				123456
@@ -10,6 +10,9 @@
 				<input type="text" placeholder="请输入要搜索的内容" disabled="" @click="searchRedict" class="searchInput" />
 			</template>
 		</navigationCustom>
+		<view class="">
+			123456
+		</view>
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
 		<GoodsList :loadingText="loadingText"></GoodsList>
 	</view>
@@ -159,10 +162,11 @@
 	}
 
 	.searchInput {
-		margin: 10px 0;
-		font-size: 30upx;
+		margin: 0 auto;
+		font-size: 26upx;
 		color: #666666;
 		border: 1px solid red;
 		height: 100%;
+		width:90%;
 	}
 </style>

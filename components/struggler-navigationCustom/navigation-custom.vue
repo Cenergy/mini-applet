@@ -31,9 +31,9 @@ export default {
 		},
 		marginTop() {
 			const { platform, statusBarHeight } = uni.getSystemInfoSync();
-			let height = statusBarHeight + 4;
+			let height = statusBarHeight + 5;
 			if (platform.toLowerCase() == 'android') {
-				height += 4;
+				height += 5;
 			}
 			return height + 'px';
 		}

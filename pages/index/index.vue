@@ -9,7 +9,6 @@
 			 <template v-slot:right>
 			    789
 			 </template>
-			
 		</navigationCustom>
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
 		<GoodsList :loadingText="loadingText"></GoodsList>

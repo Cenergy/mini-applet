@@ -2,7 +2,15 @@
 	<view class="">
 		<!-- <Search @searchRedict='searchRedict'></Search> -->
 		<!-- <uni-nav-bar left-icon="back" left-text="返回" right-text="菜单" title="导航栏组件"></uni-nav-bar> -->
-		<navigationCustom></navigationCustom>
+		<navigationCustom>
+			 <template v-slot:left>
+			    123456
+			 </template>
+			 <template v-slot:right>
+			    789
+			 </template>
+			
+		</navigationCustom>
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
 		<GoodsList :loadingText="loadingText"></GoodsList>
 	</view>

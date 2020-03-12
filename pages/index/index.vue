@@ -7,7 +7,7 @@
 				+ 深圳
 			</template>
 			<template v-slot:right>
-				<view class="index-search"  @click="searchRedict">
+				<view class="index-search" @click="searchRedict">
 					<view class="icon_search" style="text-align: left">
 						<text class="cuIcon cuIcon-search" style="margin-right: 3px"></text>
 						<text>输入关键字</text>
@@ -15,6 +15,9 @@
 				</view>
 			</template>
 		</navigationCustom>
+		<view class="background_view">
+
+		</view>
 
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
 		<GoodsList :loadingText="loadingText"></GoodsList>
@@ -167,7 +170,7 @@
 	.index-search {
 		text-align: center;
 		font-size: 16px;
-		color: #fff;
+		color: #ccc;
 		zoom: 1;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -186,7 +189,7 @@
 		/* 		height: 66upx;
 		line-height: 66upx; */
 		font-size: 26upx;
-		color: #dcdcdc;
+		color: #cccccc;
 		text-align: left;
 		text-indent: 32upx;
 		zoom: 1;
@@ -196,5 +199,15 @@
 		-webkit-transition: all .4s ease 0s;
 		transform-origin: center;
 
+	}
+
+	.background_view {
+		width: 100%;
+		height: 100rpx;
+		position: absolute;
+		z-index: -1;
+		background-color: #fff; /* 不支持线性的时候显示 */
+		background-image: linear-gradient(to bottom, #df4c42 , #ffaa7f);
+		box-shadow: 0px 0px 10px 10px #ffaa7f;
 	}
 </style>

@@ -30,13 +30,13 @@ export default {
         height += 4; //android 28px
       }
       // 胶囊高度 32px 下边框6px height 状态栏高度
-      return height + 38 + "px";
+      return height + 42 + "px";
     },
     marginTop() {
       const { platform, statusBarHeight } = uni.getSystemInfoSync();
-      let height = statusBarHeight + 5;
+      let height = statusBarHeight + 4;
       if (platform.toLowerCase() == "android") {
-        height += 5;
+        height += 4;
       }
       return height + "px";
     }
@@ -94,13 +94,14 @@ export default {
 .navigation-bar {
   width: 100%;
   box-sizing: border-box;
+  background-color: #df4c42;
 
   .navigation-bar-fixed {
     width: 100%;
     position: fixed;
     top: 0;
     box-sizing: border-box;
-    z-index: 999;
+    z-index: 99999;
     background: #fff;
     display: flex;
     justify-content: center;
@@ -160,7 +161,6 @@ export default {
       // width: 89px;
       right: 100px;
       left: 30rpx;
-      background-color: green;
       // border-radius: 16px;
       // border:0.5px solid rgba(255,255,255,.3);
       box-sizing: border-box;
@@ -168,12 +168,10 @@ export default {
       z-index: 9;
       .navigation-bar-left {
         flex: 2;
-        background-color: yellow;
       }
 
       .navigation-bar-right {
         flex: 8;
-        background-color: blue;
       }
     }
   }

@@ -1,20 +1,21 @@
 <script>
-	export default {
-		onLaunch: function() {
-			console.log('App Launch')
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
-	}
+export default {
+  onLaunch: function() {
+    console.log("App Launch");
+  },
+  onShow: function() {
+    console.log("App Show");
+  },
+  onHide: function() {
+    console.log("App Hide");
+  }
+};
 </script>
 
-<style>
-	/*每个页面公共css */
-	::-webkit-scrollbar{
-		display: none;
-	}
+<style lang="scss">
+/*每个页面公共css */
+@import "./common/css/fonts/iconfont.css";
+::-webkit-scrollbar {
+  display: none;
+}
 </style>

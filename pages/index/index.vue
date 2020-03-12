@@ -1,18 +1,21 @@
 <template>
 	<view class="">
 		<!-- <Search @searchRedict='searchRedict'></Search> -->
-		
+
 		<navigationCustom>
 			<template v-slot:left>
-				123456
+				+ 深圳
 			</template>
 			<template v-slot:right>
-				<input type="text" placeholder="请输入要搜索的内容" disabled="" @click="searchRedict" class="searchInput" />
+				<view class="index-search"  @click="searchRedict">
+					<view class="icon_search" style="text-align: left">
+						<text class="cuIcon cuIcon-search" style="margin-right: 3px"></text>
+						<text>输入关键字</text>
+					</view>
+				</view>
 			</template>
 		</navigationCustom>
-		<view class="">
-			123456
-		</view>
+
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
 		<GoodsList :loadingText="loadingText"></GoodsList>
 	</view>
@@ -161,12 +164,37 @@
 		color: #8f8f94;
 	}
 
-	.searchInput {
+	.index-search {
+		text-align: center;
+		font-size: 16px;
+		color: #fff;
+		zoom: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 90%;
 		margin: 0 auto;
+	}
+
+	.index-search .icon_search {
+		background: #F6F6F6;
+		border-radius: 40upx;
+		-moz-border-radius: 40upx;
+		-webkit-border-radius: 40upx;
+		-o-border-radius: 40upx;
+		-ms-border-radius: 40upx;
+		/* 		height: 66upx;
+		line-height: 66upx; */
 		font-size: 26upx;
-		color: #666666;
-		border: 1px solid red;
-		height: 100%;
-		width:90%;
+		color: #dcdcdc;
+		text-align: left;
+		text-indent: 32upx;
+		zoom: 1;
+		transition: all .4s ease 0s;
+		-o-transition: all .4s ease 0s;
+		-moz-transition: all .4s ease 0s;
+		-webkit-transition: all .4s ease 0s;
+		transform-origin: center;
+
 	}
 </style>

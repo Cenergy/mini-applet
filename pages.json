@@ -20,7 +20,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "爱即是诗",
-		"navigationBarBackgroundColor": "#ffd300",
+		"navigationBarBackgroundColor": "#df4c42",
 		"backgroundColor": "#ffd30",
 		"enablePullDownRefresh": true,
 		"onReachBottomDistance":50

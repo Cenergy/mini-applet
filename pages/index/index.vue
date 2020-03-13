@@ -16,7 +16,42 @@
       </template>
     </navigationCustom>
     <view class="background_view"></view>
-    <view class="content-container"> </view>
+    <view class="content-container">
+      <view class="cate-section">
+        <view class="cate-item">
+          <image src="/static/temp/c3.png"></image>
+          <text>环球美食</text>
+        </view>
+        <view class="cate-item">
+          <image src="/static/temp/c5.png"></image>
+          <text>个护美妆</text>
+        </view>
+        <view class="cate-item">
+          <image src="/static/temp/c6.png"></image>
+          <text>营养保健</text>
+        </view>
+        <view class="cate-item">
+          <image src="/static/temp/c7.png"></image>
+          <text>家居厨卫</text>
+        </view>
+        <view class="cate-item">
+          <image src="/static/temp/c8.png"></image>
+          <text>速食生鲜</text>
+        </view>
+        <view class="cate-item">
+          <image src="/static/temp/c6.png"></image>
+          <text>营养保健</text>
+        </view>
+        <view class="cate-item">
+          <image src="/static/temp/c7.png"></image>
+          <text>家居厨卫</text>
+        </view>
+        <view class="cate-item">
+          <image src="/static/temp/c8.png"></image>
+          <text>速食生鲜</text>
+        </view>
+      </view>
+    </view>
 
     <!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
     <GoodsList :loadingText="loadingText"></GoodsList>
@@ -133,7 +168,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .content {
   display: flex;
   flex-direction: column;
@@ -198,15 +233,44 @@ export default {
   height: 100rpx;
   position: absolute;
   z-index: -1;
-  background-color: #fff; /* 不支持线性的时候显示 */
+  background-color: #fff;
+  /* 不支持线性的时候显示 */
   background-image: linear-gradient(to bottom, #df4c42, #ffaa7f);
   box-shadow: 0px 0px 10px 10px #ffaa7f;
 }
+
 .content-container {
   width: 98%;
-  height: 200rpx;
-  margin: 0 auto;
+  min-height: 200rpx;
+  margin: 2px auto;
   background-color: #ffffff;
   border-radius: 10rpx 10rpx 0 0;
+}
+
+/* 分类 */
+.cate-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30upx 22upx;
+  background: #fff;
+  .cate-item {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 20rpx;
+    align-items: center;
+    font-size: 26upx;
+    color: #303133;
+  }
+  /* 原图标颜色太深,不想改图了,所以加了透明度 */
+  image {
+    width: 88upx;
+    height: 88upx;
+    margin-bottom: 14upx;
+    border-radius: 50%;
+    opacity: 0.7;
+    box-shadow: 4upx 4upx 20upx rgba(250, 67, 106, 0.3);
+  }
 }
 </style>

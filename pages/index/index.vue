@@ -15,8 +15,8 @@
 				</view>
 			</template>
 		</navigationCustom>
-		<view class="background_view">
-
+		<view class="background_view"></view>
+		<view class="content-container">
 		</view>
 
 		<!-- <GoodsList :goodsList="dataList" :loadingText="loadingText" :baseURL="baseURL"></GoodsList> -->
@@ -209,5 +209,12 @@
 		background-color: #fff; /* 不支持线性的时候显示 */
 		background-image: linear-gradient(to bottom, #df4c42 , #ffaa7f);
 		box-shadow: 0px 0px 10px 10px #ffaa7f;
+	}
+	.content-container{
+		width: 98%;
+		height: 200rpx;
+		margin: 0 auto;
+		background-color: #FFFFFF;
+		border-radius:10rpx 10rpx 0 0;
 	}
 </style>

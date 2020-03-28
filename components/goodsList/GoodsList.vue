@@ -41,43 +41,13 @@ export default {
 						sourcename: '商品名称商品名称商品名称商品名称商品名称',
 						price: '￥168',
 						slogan: '1235人付款'
-					},{
-						goods_id: 0,
-						source_img: '/static/img/goods/p1.jpg',
-						sourcename: '商品名称商品名称商品名称商品名称商品名称',
-						price: '￥168',
-						slogan: '1235人付款'
-					},{
-						goods_id: 0,
-						source_img: '/static/img/goods/p1.jpg',
-						sourcename: '商品名称商品名称商品名称商品名称商品名称',
-						price: '￥168',
-						slogan: '1235人付款'
-					},
-					{
-						goods_id: 0,
-						source_img: '/static/img/goods/p1.jpg',
-						sourcename: '商品名称商品名称商品名称商品名称商品名称',
-						price: '￥168',
-						slogan: '1235人付款'
-					},
-					{
-						goods_id: 0,
-						source_img: '/static/img/goods/p1.jpg',
-						sourcename: '商品名称商品名称商品名称商品名称商品名称',
-						price: '￥168',
-						slogan: '1235人付款'
-					},
-					{
-						goods_id: 1,
-						source_img: '/static/img/goods/p2.jpg',
-						sourcename: '商品名称商品名称商品名称商品名称商品名称',
-						price: '￥168',
-						slogan: '1235人付款'
 					}
 				];
 			}
 		}
+	},
+	onLoad() {
+		console.log(this.baseURL,"=======================")
 	},
 	onPageScroll(e) {
 		//兼容iOS端下拉时顶部漂移
@@ -131,7 +101,6 @@ page {
 }
 
 .goods-list {
-	// background-color: #f4f4f4;
 	.title {
 		width: 100%;
 		display: flex;

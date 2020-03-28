@@ -12,19 +12,21 @@
 			</template>
 			<image src="../../static/zy-search/search.svg" mode="aspectFit" @click="searchStart()" class="search-icon"></image>
 		</view>
-		<view :class="'s-' + theme" v-if="hList.length > 0">
-			<view class="header">
-				历史记录
-				<image src="../../static/zy-search/delete.svg" mode="aspectFit" @click="delhistory"></image>
+		<view :class="{ hideRes: showResult }">
+			<view :class="'s-' + theme" v-if="hList.length > 0">
+				<view class="header">
+					历史记录
+					<image src="../../static/zy-search/delete.svg" mode="aspectFit" @click="delhistory"></image>
+				</view>
+				<view class="list">
+					<view v-for="(item,index) in hList" :key="index" @click="keywordsClick(item)">{{item}}</view>
+				</view>
 			</view>
-			<view class="list">
-				<view v-for="(item,index) in hList" :key="index" @click="keywordsClick(item)">{{item}}</view>
-			</view>
-		</view>
-		<view :class="'wanted-' + theme" v-if="showWant">
-			<view class="header">猜你想搜的</view>
-			<view class="list">
-				<view v-for="(item,index) in hotList" :key="index" @click="keywordsClick(item)">{{item}}</view>
+			<view :class="'wanted-' + theme" v-if="showWant">
+				<view class="header">猜你想搜的</view>
+				<view class="list">
+					<view v-for="(item,index) in hotList" :key="index" @click="keywordsClick(item)">{{item}}</view>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -60,8 +62,19 @@
 		data() {
 			return {
 				searchText:'',								//搜索关键词
-				hList:uni.getStorageSync('search_cache')		//历史记录
+				hList:uni.getStorageSync('search_cache'),		//历史记录
+				showResult:false
 			};
+		},
+		watch:{
+			searchText:function(val,oldValue){
+				if(val===''){
+					 this.showResult=false
+				}else{
+					this.showResult=true
+				}
+				
+			}
 		},
 		methods: {
 			searchStart: function() {	//触发搜索
@@ -138,6 +151,9 @@
 </script>
 
 <style lang="less" scoped>
+	.hideRes{
+		display: none;
+	}
 	.search{
 		width: 640upx;
 		margin: 30upx auto 0;

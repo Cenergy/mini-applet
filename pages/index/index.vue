@@ -128,7 +128,7 @@ export default {
 					key_word: this.onKeyInput
 				},
 				success: res => {
-					console.log(res.data);
+					console.log("==========",res.data);
 				}
 			});
 		},

@@ -42,12 +42,15 @@
 					success: res => {
 						const { data } = res;
 						this.dataList=data.data
+						if(!this.dataList.length){
+							uni.showToast({
+								title:'查无信息',
+								icon:"none"
+							})
+						}
 					}
 				});
-				// uni.showToast({
-				// 	title:'回调的搜索信息: ' + e,
-				// 	icon:"none"
-				// })
+				
 			}
 		},
 	}

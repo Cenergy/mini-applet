@@ -2,7 +2,7 @@
 	<view class="goods-list">
 		<view class="product-list">
 			<view class="product" v-for="product in goodsList" :key="product.goods_id" @tap="toGoods(product)">
-				<image mode="scaleToFill" :src="baseURL + product.source_img"></image>
+				<image mode="scaleToFill" :src="'http://www.aigisss.com/' + product.source_img"></image>
 				<view class="name">{{ product.sourcename }}</view>
 				<view class="info">
 					<view class="price">{{ product.price }}</view>
@@ -31,13 +31,13 @@ export default {
 				return [
 					{
 						goods_id: 0,
-						source_img: '/static/img/goods/p1.jpg',
+						source_img: '/static/img/intro/gg.jpg',
 						sourcename: '商品名称商品名称商品名称商品名称商品名称',
 						price: '￥168',
 						slogan: '1235人付款'
 					},{
 						goods_id: 0,
-						source_img: '/static/img/goods/p1.jpg',
+						source_img: '/static/img/intro/intro-bg.jpg',
 						sourcename: '商品名称商品名称商品名称商品名称商品名称',
 						price: '￥168',
 						slogan: '1235人付款'
@@ -45,9 +45,6 @@ export default {
 				];
 			}
 		}
-	},
-	onLoad() {
-		console.log(this.baseURL,"=======================")
 	},
 	onPageScroll(e) {
 		//兼容iOS端下拉时顶部漂移

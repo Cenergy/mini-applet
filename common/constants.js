@@ -6,5 +6,5 @@ if (process.env.NODE_ENV === "development") {
   tempURL = "https://www.aigisss.com/apis";
 }
 
-// tempURL = "https://www.aigisss.com/apis";
+tempURL = "https://www.aigisss.com/apis";
 export const baseURL = tempURL;

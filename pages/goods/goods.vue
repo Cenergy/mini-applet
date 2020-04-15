@@ -114,7 +114,7 @@
 		</view>
 		<!-- 标题 价格 -->
 		<view class="info-box goods-info">
-			<view class="price">￥{{goodsData.price}}</view>
+			<view class="price">{{goodsData.price}}</view>
 			<view class="title">
 				{{goodsData.name}}
 			</view>
@@ -122,11 +122,11 @@
 		<!-- 服务-规则选择 -->
 		<view class="info-box spec">
 			<view class="row" @tap="showService">
-				<view class="text">服务</view>
+				<view class="text">特点</view>
 				<view class="content"><view class="serviceitem" v-for="(item,index) in goodsData.service" :key="index">{{item.name}}</view></view>
 				<view class="arrow"><view class="icon xiangyou"></view></view>
 			</view>
-			<view class="row" @tap="showSpec(false)">
+			<!-- <view class="row" @tap="showSpec(false)">
 				<view class="text">选择</view>
 				<view class="content">
 					<view>选择规格：</view>
@@ -136,7 +136,7 @@
 					
 				</view>
 				<view class="arrow"><view class="icon xiangyou"></view></view>
-			</view>
+			</view> -->
 		</view>
 		<!-- 评价 -->
 		<view class="info-box comments" id="comments">
@@ -182,10 +182,7 @@ export default {
 			// #endif
 			//轮播主图数据
 			swiperList: [
-				{ id: 1, img: 'https://ae01.alicdn.com/kf/HTB1Mj7iTmzqK1RjSZFjq6zlCFXaP.jpg' },
-				{ id: 2, img: 'https://ae01.alicdn.com/kf/HTB1fbseTmzqK1RjSZFLq6An2XXaL.jpg' },
-				{ id: 3, img: 'https://ae01.alicdn.com/kf/HTB1dPUMThnaK1RjSZFtq6zC2VXa0.jpg' },
-				{ id: 4, img: 'https://ae01.alicdn.com/kf/HTB1OHZrTXzqK1RjSZFvq6AB7VXaw.jpg' }
+				{ id: 1, img: 'https://ae01.alicdn.com/kf/HTB1Mj7iTmzqK1RjSZFjq6zlCFXaP.jpg' }
 			],
 			//轮播图下标
 			currentSwiper: 0,
@@ -198,25 +195,24 @@ export default {
 			goodsData:{
 				id:1,
 				name:"商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题",
-				price:"127.00",
+				price:"验证码ddfx",
 				number:1,
 				service:[
-					{name:"正品保证",description:"此商品官方保证为正品"},
-					{name:"极速退款",description:"此商品享受退货极速退款服务"},
-					{name:"7天退换",description:"此商品享受7天无理由退换服务"}
+					{name:"质量上乘",description:"不一定是正品，但挺好的"},
+					{name:"开源",description:"MIT协议"}
 				],
 				spec:["XS","S","M","L","XL","XXL"],
 				comment:{
 					number:102,
 					userface:'../../static/img/face.jpg',
-					username:'大黑哥',
-					content:'很不错，之前买了很多次了，很好看，能放很久，和图片色差不大，值得购买！'
+					username:'海之能',
+					content:'资源不错！'
 				}
 			},
 			selectSpec:null,//选中规格
 			isKeep:false,//收藏
 			//商品描述html
-			descriptionStr:'<div style="text-align:center;"><img width="100%" src="https://ae01.alicdn.com/kf/HTB1t0fUl_Zmx1VjSZFGq6yx2XXa5.jpg"/><img width="100%" src="https://ae01.alicdn.com/kf/HTB1LzkjThTpK1RjSZFKq6y2wXXaT.jpg"/><img width="100%" src="https://ae01.alicdn.com/kf/HTB18dkiTbvpK1RjSZPiq6zmwXXa8.jpg"/></div>'
+			descriptionStr:'<div style="text-align:center;"><img width="100%" src="https://ae01.alicdn.com/kf/HTB1t0fUl_Zmx1VjSZFGq6yx2XXa5.jpg"/></div>'
 		};
 	},
 	onLoad(option) {

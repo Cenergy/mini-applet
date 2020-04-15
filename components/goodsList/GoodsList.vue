@@ -5,7 +5,8 @@
         class="product"
         v-for="product in goodsList"
         :key="product.goods_id"
-        @click="toGoods(123456)"
+		:data-item="product"
+        @click="toGoods(product)"
       >
         <image
           mode="scaleToFill"
@@ -100,7 +101,7 @@ export default {
     toGoods(product) {
       console.log(`Rd: toGoods -> product`, product);
       uni.navigateTo({
-        url: "/pages/goods/goods",
+        url: "/pages/goods/goods?item="+encodeURIComponent(JSON.stringify(product)),
 		fail(e) {
 			console.log(e,"================")
 		}

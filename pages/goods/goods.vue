@@ -8,7 +8,7 @@
 				<view class="middle"></view>
 				<view class="icon-btn">
 					<view class="icon tongzhi" @tap="toMsg"></view>
-					<view class="icon cart" @tap="joinCart"></view>
+					<view class="icon tongzhi" @tap="joinCart"></view>
 				</view>
 			</view>
 			<!-- 头部-滚动渐变显示 -->
@@ -19,7 +19,7 @@
 				</view>
 				<view class="icon-btn">
 					<view class="icon tongzhi" @tap="toMsg"></view>
-					<view class="icon cart" @tap="joinCart"></view>
+					<view class="icon tongzhi" @tap="joinCart"></view>
 				</view>
 			</view>
 		</view>
@@ -30,18 +30,14 @@
 					<view class="icon fenxiang"></view>
 					<view class="text">分享</view>
 				</view>
-				<view class="box" @tap="toChat">
-					<view class="icon kefu"></view>
-					<view class="text">客服</view>
-				</view>
 				<view class="box" @tap="keep">
 					<view class="icon" :class="[isKeep?'shoucangsel':'shoucang']"></view>
 					<view class="text">{{isKeep?'已':''}}收藏</view>
 				</view>
 			</view>
 			<view class="btn">
-				<view class="joinCart" @tap="joinCart">确定</view>
-				<view class="buy" @tap="buy">退出</view>
+				<view class="joinCart" @tap="joinCart">赞</view>
+				<view class="buy" @tap="buy">提示</view>
 			</view>
 		</view>
 		<!-- share弹窗 -->
@@ -101,24 +97,8 @@
 			<view class="mask"></view>
 			<view class="layer" @tap.stop="discard">
 				<view class="content">
-					<view class="title">选择规格：</view>
-					<view class="sp">
-						<view v-for="(item,index) in goodsData.spec" :class="[index==selectSpec?'on':'']" @tap="setSelectSpec(index)" :key="index">{{item}}</view>
-					</view>
-					<view class="length" v-if="selectSpec!=null">
-						<view class="text">数量</view>
-						<view class="number">
-							<view class="sub" @tap.stop="sub">
-								<view class="icon jian"></view>
-							</view>
-							<view class="input" @tap.stop="discard">
-								<input type="number" v-model="goodsData.number" />
-							</view>
-							<view class="add"  @tap.stop="add">
-								<view class="icon jia"></view>
-							</view>
-						</view>
-					</view>
+					<view class="title">信息：</view>
+					123456
 				</view>
 				<view class="btn"><view class="button" @tap="hideSpec">完成</view></view>
 			</view>
@@ -245,7 +225,8 @@ export default {
 		this.showBack = false;
 		// #endif
 		//option为object类型，会序列化上个页面传递的参数
-		console.log(option.cid); //打印出上个页面传递的参数。
+		const item = JSON.parse(decodeURIComponent(option.item));
+		console.log(option.cid,"=============",item); //打印出上个页面传递的参数。
 	},
 	onReady(){
 		this.calcAnchor();//计算锚点高度，页面数据是ajax加载时，请把此行放在数据渲染完成事件中执行以保证高度计算正确
